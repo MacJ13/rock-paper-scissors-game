@@ -1,5 +1,3 @@
-
-
 function getPrompt(){
     const input = prompt("select 'rock', 'paper', 'scissors'");
     
@@ -37,3 +35,15 @@ function playRound(playerSelection , computerSelection){
         return `You lose! ${computerSelection} beats ${playerSelection}`;
     }
 }
+
+function game(){
+    for (let i = 0; i < 5; i++){
+        let player = getPrompt();
+        let comp = getRandom();
+        let result = playRound(player, comp);
+        if(!result)  continue;
+        console.log(result);
+    }
+}
+
+game();
