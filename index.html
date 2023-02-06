@@ -9,25 +9,32 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+    
    <div class="container">
-        <h1 class="h1">Game: Rock - Paper - Scissors</h1>
-        <p class="paragraph">These is simple game. Choose item</p>
+        <h1 class="h1">Rock - Paper - Scissors</h1>
+        <p class="paragraph">Round 1 of 5</p>
         
         <div class="items">
             <div class="item">
-                <img src="img/stone.png" alt="rock">
-                <button class="btn">Rock</button>
+                <img class="img-item" src="img/stone.png" alt="rock">
+                <!-- <span class="btn">Rock</button> -->
             </div>
             <div class="item">
-                <img src="img/paper.png" alt="paper">
-                <button class="btn">Paper</button>
+                <img class="img-item" src="img/paper.png" alt="paper">
+                <!-- <span class="btn">Paper</button> -->
             </div>
             <div class="item">
-                <img src="img/scissors.png" alt="scissors">
-                <button class="btn">Scissors</button>
+                <img class="img-item" src="img/scissors.png" alt="scissors">
+                <!-- <span class="btn">Scissors</button> -->
             </div>
         </div>
-        <div class="results">results</div>
+        <div class="scores">
+            <div class="score score-user">user<span class="score-number">0</span></div>
+            <div class="score score-computer">computer<span class="score-number">0</span></div>
+        </div>
+   </div>
+   <div class="game-details">
+        <h2 class="h2">Game relation:</h2>
    </div>
 </body>
 </html>
