@@ -2,17 +2,23 @@ const imgItems = document.querySelectorAll('.img-item');
 const userScoreElement = document.querySelector('.score-user');
 const computerScoreElement = document.querySelector('.score-computer');
 const roundElement = document.querySelector('.paragraph.round');
-
+const resultElement = document.querySelector('.game-details');
 
 
 let userScore = 0;
 let computerScore = 0;
-
+const maxScore = 5;
 
 function getPrompt(){
     const input = prompt("select 'rock', 'paper', 'scissors'");
     
     return input.toLowerCase() || input; 
+}
+
+
+function showResult(str){
+    const result = resultElement.querySelector('h2');
+    result.textContent = str; 
 }
 
 function getRandom(){
@@ -23,37 +29,39 @@ function getRandom(){
 }
 
 function playRound(playerSelection , computerSelection){
-    if (!playerSelection){
-        console.error('You entry incorrect Value!!!');
-        return;
-    }
-
     const rock = 'rock';
     const paper = 'paper';
     const scissors = 'scissors';
 
-
     if (playerSelection === computerSelection){
-        return 'Its\' draw!';
+        showResult('It\'s draw!')
     }
     else if(playerSelection === rock && computerSelection === scissors ||
         playerSelection === scissors && computerSelection === paper ||
         playerSelection === paper && computerSelection === rock
     ){
-        return `You win! ${playerSelection} beats ${computerSelection}`;
+        showResult(`You win! ${playerSelection} beats ${computerSelection}`);
     }
     else {
-        return `You lose! ${computerSelection} beats ${playerSelection}`;
+        showResult(`You lose! ${computerSelection} beats ${playerSelection}`);
     }
 }
 
-function getDataItem(e){
-    const data = e.target.getAttribute('data-item');
-    if (!data) return;
-    console.log(data);
+
+function game(e){
+    const playerSelection = e.target.getAttribute('data-item');
+    if(!playerSelection) return;
+    const computerSelection = getRandom();
+    
+    playRound(playerSelection, computerSelection);
+    if(userScore == maxScore || computerScore == maxScore){
+        imgItems.forEach(imgItem => imgItem.removeEventListener('click', game));
+    }
+
 }
 
-imgItems.forEach(imgItem => imgItem.addEventListener('click', getDataItem));
+
+imgItems.forEach(imgItem => imgItem.addEventListener('click', game));
 
 
 // function game(){
