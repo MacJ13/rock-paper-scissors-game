@@ -47,6 +47,14 @@ function playRound(playerSelection , computerSelection){
     }
 }
 
+imgItems.forEach(imgItem => {
+    imgItem.addEventListener('click', (e) => {
+        const data = e.target.getAttribute('data-item');
+        if (!data) return;
+        console.log(data);
+    })
+})
+
 // function game(){
 //     for (let i = 0; i < 5; i++){
 //         let player = getPrompt();
