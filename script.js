@@ -1,3 +1,14 @@
+const imgItems = document.querySelectorAll('.img-item');
+const userScoreElement = document.querySelector('.score-user');
+const computerScoreElement = document.querySelector('.score-computer');
+const roundElement = document.querySelector('.paragraph.round');
+
+
+
+let userScore = 0;
+let computerScore = 0;
+
+
 function getPrompt(){
     const input = prompt("select 'rock', 'paper', 'scissors'");
     
@@ -36,14 +47,14 @@ function playRound(playerSelection , computerSelection){
     }
 }
 
-function game(){
-    for (let i = 0; i < 5; i++){
-        let player = getPrompt();
-        let comp = getRandom();
-        let result = playRound(player, comp);
-        if(!result)  continue;
-        console.log(result);
-    }
-}
+// function game(){
+//     for (let i = 0; i < 5; i++){
+//         let player = getPrompt();
+//         let comp = getRandom();
+//         let result = playRound(player, comp);
+//         if(!result)  continue;
+//         console.log(result);
+//     }
+// }
 
-game();
+// game();
