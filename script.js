@@ -1,6 +1,6 @@
 const imgItems = document.querySelectorAll('.img-item');
-const userScoreElement = document.querySelector('.score-user');
-const computerScoreElement = document.querySelector('.score-computer');
+const userScoreElement = document.querySelector('#score-user');
+const computerScoreElement = document.querySelector('#score-computer');
 const roundElement = document.querySelector('.paragraph.round');
 const resultElement = document.querySelector('.game-details');
 
@@ -14,7 +14,6 @@ function getPrompt(){
     
     return input.toLowerCase() || input; 
 }
-
 
 function showResult(str){
     const result = resultElement.querySelector('h2');
@@ -41,9 +40,13 @@ function playRound(playerSelection , computerSelection){
         playerSelection === paper && computerSelection === rock
     ){
         showResult(`You win! ${playerSelection} beats ${computerSelection}`);
+        userScore++;
+        userScoreElement.textContent = userScore;
     }
     else {
         showResult(`You lose! ${computerSelection} beats ${playerSelection}`);
+        computerScore++;
+        computerScoreElement.textContent = computerScore;
     }
 }
 
