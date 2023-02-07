@@ -69,21 +69,26 @@ button {
 }
 
 
-.item > img {
+.item-border > img {
     display: block;
-    width: 180px;
-    height: 180px;
-    border: 1px solid black;
-    border-radius: 50%;
-    margin-bottom: 15px;
+    width: 100%;
+    height: 100%;
 
     cursor: pointer;
 
     transition: opacity 300ms;
 }
 
-.img-item:hover {
+.item-border:hover {
     opacity: 0.5;
+}
+
+.item-border:active:active > img {
+    transform: scale(1.15);
+}
+
+.transparent {
+ opacity: 0.5;
 }
 
 .scores {
