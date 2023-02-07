@@ -3,7 +3,7 @@ const userScoreElement = document.querySelector('#score-user');
 const computerScoreElement = document.querySelector('#score-computer');
 const roundElement = document.querySelector('.paragraph.round');
 const resultElement = document.querySelector('.game-details');
-
+const itemBoxElement = document.querySelector('.items');
 
 let userScore = 0;
 let computerScore = 0;
@@ -57,7 +57,13 @@ function game(e){
     const computerSelection = getRandom();
     
     playRound(playerSelection, computerSelection);
-    if(userScore == maxScore || computerScore == maxScore){
+    if(userScore === maxScore || computerScore === maxScore){
+
+        
+        const finalResultText = userScore === maxScore ? 'You win the game!' : 'You lose the game!'
+        showResult(finalResultText.toUpperCase());
+        itemBoxElement.classList.add('transparent');
+
         imgItems.forEach(imgItem => imgItem.removeEventListener('click', game));
     }
 
