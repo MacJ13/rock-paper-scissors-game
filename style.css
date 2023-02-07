@@ -66,6 +66,8 @@ button {
     height: 180px;
     border: 1px solid black;
     border-radius: 50%;
+
+    overflow: hidden;
 }
 
 
@@ -77,6 +79,7 @@ button {
     cursor: pointer;
 
     transition: opacity 300ms;
+    
 }
 
 .item-border:hover {
