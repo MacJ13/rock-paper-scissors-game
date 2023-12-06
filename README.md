@@ -4,3 +4,6 @@ which created to check and practice
 newly learned tools and concepts of JavaScript
 (variables, strings, functions, conditional statements, 
 basic and complex operators)
+
+# Link
+[live preview](https://macj13.github.io/rock-paper-scissors-game/)
